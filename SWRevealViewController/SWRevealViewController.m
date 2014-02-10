@@ -1147,7 +1147,7 @@ static NSString * const SWSegueRightIdentifier = @"sw_right";
     
     void (^completionBlock)(void) = ^(void)
     {
-        if (_frontViewLocation <= 0.0f)
+        if (_frontViewLocation <= 0.0f || controller != self.rearViewController)
             [controller.view removeFromSuperview];
     };
     
