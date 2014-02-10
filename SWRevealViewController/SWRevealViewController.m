@@ -168,8 +168,8 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     
     [self _layoutRearViewsForLocation:xLocation];
     
-    _frontView.frame = CGRectMake(xLocation, 0.0f, bounds.size.width, bounds.size.height);
-    
+    _frontView.frame = CGRectMake(xLocation, 0.0f, bounds.size.width - _c.frontViewLocation, bounds.size.height);
+
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_frontView.bounds];
     _frontView.layer.shadowPath = shadowPath.CGPath;
 }
@@ -233,7 +233,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     xLocation = [self _adjustedDragLocationForLocation:xLocation];
     [self _layoutRearViewsForLocation:xLocation];
     
-    _frontView.frame = CGRectMake(xLocation, 0.0f, bounds.size.width, bounds.size.height);
+    _frontView.frame = CGRectMake(xLocation, 0.0f, bounds.size.width - _c.frontViewLocation, bounds.size.height);
 }
 
 
